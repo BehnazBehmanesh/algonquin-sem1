@@ -1,0 +1,54 @@
+import java.lang.*;
+import java.util.Scanner;
+
+public class LabTest {
+	private static int startNum;
+	private static int endNum;
+	private int divisor;
+
+	public LabTest() {
+		startNum = 0;
+		endNum = 1;
+		divisor = 1;
+	}
+
+	public void userData() {
+		// input for startNum
+		System.out.print("\nEnter starting number: ");
+		Scanner input1 = new Scanner(System.in);
+		startNum = input1.nextInt();
+		while (startNum == 0) {
+			System.out.println("Invalid startNum--> startNum should not be zero!");
+			System.out.println("Enter starting number: ");
+			startNum = input1.nextInt();
+		}
+
+		// input for endNum
+		System.out.print("Enter ending number: ");
+		Scanner input2 = new Scanner(System.in);
+		endNum = input2.nextInt();
+
+		while (endNum < startNum) {
+			System.out.print("Invalid endNum--> endNum should be greater than startNum!");
+			System.out.print("Enter ending number: ");
+			endNum = input2.nextInt();
+		}
+
+		// input for divisor
+		System.out.print("Enter divisor: ");
+		Scanner input3 = new Scanner(System.in);
+		divisor = input3.nextInt();
+		while (divisor == 0) {
+			System.out.print("Invalid divisor--> divisor should not be zero!");
+			System.out.print("Enter divisor: ");
+			startNum = input3.nextInt();
+		}
+	}
+	
+	public static void displayData(){
+		System.out.println("Range of numbers: "+ startNum+" to"+endNum);
+	
+	}
+	
+	
+}
